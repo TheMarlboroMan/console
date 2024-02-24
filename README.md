@@ -5,7 +5,7 @@ able to connect a text stream source to existing projects to help in the
 debugging process (think a game and being able to say move_player_to x y or
 print_collisions).
 
-Many features and proper documentation are missing.
+Many features are missing.
 
 ## overview
 

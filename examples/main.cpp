@@ -23,6 +23,11 @@ class env:
 			return console::result{console::result::ok, "will exit"};
 		}
 
+		if(_cmdname=="help") {
+
+			return console::result{console::result::ok, "valid commands are help, hello(str), exit and sum(int, int)"};
+		}
+
 		if(_cmdname=="hello") {
 
 			std::stringstream ss;
@@ -52,6 +57,7 @@ int main(int, char **) {
 	c.connect_output(std::cout);
 	c.map_command("hello", { {console::types::string} });
 	c.map_command("exit", {});
+	c.map_command("help", {});
 	c.map_command("sum", { {console::types::integer}, {console::types::integer}});
 
 	while(!e.exit) {
@@ -59,9 +65,7 @@ int main(int, char **) {
 		std::cout<<">>";
 		std::string in;
 		std::getline(std::cin, in);
-
-		std::stringstream ss(in);
-		c.send(ss);
+		c.send(in);
 	}
 
 	return 0;

@@ -14,4 +14,5 @@ Changes will be documented under Added, Changed, Deprecated, Removed, Fixed or S
 ## [v0.0.0]: 23 Feb 2024
 ### Added
 - Project is created.
+- Documentation is added.
 

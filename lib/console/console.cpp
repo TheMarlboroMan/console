@@ -15,6 +15,13 @@ console::console& console::console::map_command(
 	const std::vector<parameter>& _parameters
 ) {
 
+	if(std::string::npos != _command_name.find_first_of("\t\n ")) {
+
+		std::stringstream ss;
+		ss<<"invalid command name '"<<_command_name<<"'. command names must not contain whitespace";
+		throw runtime_error(ss.str());
+	}
+
 	commands.insert(std::make_pair(_command_name, command_definition{_command_name, _parameters}));
 	return *this;
 }
@@ -45,6 +52,14 @@ result console::console::send(
 	}
 
 	return result;
+}
+
+result console::console::send(
+	const std::string& _input
+) {
+
+	std::istringstream iss(_input);
+	return send(iss);
 }
 
 void console::console::push_arg_and_clear_buffer(
