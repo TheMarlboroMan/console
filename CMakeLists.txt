@@ -93,7 +93,10 @@ if(${BUILD_EXAMPLES})
 		message(FATAL_ERROR "The shared library must be built to build the examples!")
 	endif()
 
-	add_executable(stdout-console examples/main.cpp)
+	add_executable(stdout-console examples/stdout-console.cpp)
 	target_link_libraries(stdout-console console_shared)
+
+	add_executable(ostringstream-console examples/ostringstream.cpp)
+	target_link_libraries(ostringstream-console console_shared)
 
 endif()
