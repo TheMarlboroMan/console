@@ -11,6 +11,12 @@ Changes will be documented under Added, Changed, Deprecated, Removed, Fixed or S
 ## Unreleased
 ### Pending
 
+## [v0.0.1]: 25 Feb 2024
+### Added
+- Added console::get_commands to get a live reference of all mapped commands.
+- Makes most values printable through a ostream.
+
+
 ## [v0.0.0]: 23 Feb 2024
 ### Added
 - Project is created.

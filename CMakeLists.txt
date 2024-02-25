@@ -9,7 +9,7 @@ option(BUILD_STATIC "Build a static library" OFF)
 #library version
 set(MAJOR_VERSION 0)
 set(MINOR_VERSION 0)
-set(PATCH_VERSION 0)
+set(PATCH_VERSION 1)
 
 if(${BUILD_DEBUG})
 

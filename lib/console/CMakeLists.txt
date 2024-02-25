@@ -4,5 +4,8 @@ set(SOURCE
    ${CMAKE_CURRENT_SOURCE_DIR}/console_environment.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/lib.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/console.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/parameter.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/definitions.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/command_definition.cpp
    PARENT_SCOPE
 )

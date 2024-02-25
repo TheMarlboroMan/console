@@ -26,6 +26,19 @@ console::console& console::console::map_command(
 	return *this;
 }
 
+std::vector<command_definition> console::console::get_commands() const {
+
+	std::vector<command_definition> result;
+	result.reserve(commands.size());
+
+	for(const auto& pair : commands) {
+
+		result.push_back(pair.second);
+	}
+
+	return result;
+}
+
 console::console& console::console::connect_output(
 	std::ostream& _output
 ) {
@@ -262,6 +275,12 @@ bool console::console::is_integer(
 
 	for(const auto c : _value) {
 
+		//very naive, could say -43-2 for all we can tell...
+		if(c=='-') {
+
+			continue;
+		}
+
 		if(!std::isdigit(static_cast<unsigned char>(c))) { //this is common in the ctype header.
 
 			return false;
@@ -277,6 +296,7 @@ bool console::console::is_decimal(
 
 	for(const auto c : _value) {
 
+		//equally naive, could say 354.753.434
 		if(c=='.') {
 
 			continue;

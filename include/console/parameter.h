@@ -2,6 +2,7 @@
 
 #include "argument.h"
 #include "definitions.h"
+#include <ostream>
 
 namespace console {
 
@@ -23,4 +24,6 @@ struct parameter {
  */
 	argument        default_value{false};
 };
+
+std::ostream& operator<<(std::ostream&, const parameter&);
 }

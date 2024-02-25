@@ -1,6 +1,7 @@
 #pragma once
 
 #include "console_environment.h"
+#include "command_definition.h"
 #include "result.h"
 #include "parameter.h"
 #include "argument.h"
@@ -14,6 +15,7 @@ namespace console {
 class console {
 
 	public:
+
 
 /**
  * class constructor, must be hooked to an execution environment at all
@@ -30,6 +32,13 @@ class console {
 		const std::string&,
 		const std::vector<parameter>&
 	);
+
+/**
+ * returns a vector of command definitions with all commands mapped in 
+ * the console. The vector is for reference only, no changes made to it 
+ * will change the console commands themselves.
+ */
+	std::vector<command_definition> get_commands() const;
 
 /**
  * the console can be connected to an ostream so all the string ouput of its
@@ -65,11 +74,6 @@ class console {
  */
 	struct type_mismatch: public std::runtime_error {
 		type_mismatch(const std::string& _err):std::runtime_error{_err}{}
-	};
-
-	struct                  command_definition {
-		const std::string               name;
-		const std::vector<parameter>    parameters;
 	};
 
 	void                    push_arg_and_clear_buffer(
