@@ -38,7 +38,7 @@ endif()
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
-add_compile_options(-Wall -Wextra -Wundef -Wcast-align -Wwrite-strings -Wlogical-op -Wmissing-declarations -Wredundant-decls -Wshadow -Woverloaded-virtual -Wno-deprecated -ansi -pedantic -fno-rtti)
+add_compile_options(-Wall -Wextra -Wundef -Wcast-align -Wwrite-strings -Wlogical-op -Wmissing-declarations -Wredundant-decls -Wshadow -Woverloaded-virtual -Wno-deprecated -pedantic -fno-rtti)
 
 #Add the include directory.
 include_directories("include")
@@ -78,7 +78,7 @@ set(INSTALL_DIR "include")
 install(DIRECTORY include/ DESTINATION ${INSTALL_DIR} FILES_MATCHING PATTERN "*.h")
 
 IF(WIN32)
-	if(${BUILD_SHARED)
+	if(${BUILD_SHARED})
 		target_compile_definitions(console_shared PUBLIC -DWINBUILD)
 	endif()
 	if(${BUILD_STATIC})
