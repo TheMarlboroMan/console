@@ -78,6 +78,9 @@ set(INSTALL_DIR "include")
 install(DIRECTORY include/ DESTINATION ${INSTALL_DIR} FILES_MATCHING PATTERN "*.h")
 
 IF(WIN32)
+
+	include_directories(../log/include)
+
 	if(${BUILD_SHARED})
 		target_compile_definitions(console_shared PUBLIC -DWINBUILD)
 	endif()
