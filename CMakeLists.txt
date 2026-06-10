@@ -98,7 +98,7 @@ IF(WIN32)
 			IMPORTED_LOCATION "../../log/build/liblm${IMPORTED_LIB_POSTFIX}.dll"
 		)
 
-		target_link_libraries(appenv_shared PRIVATE lm)
+		target_link_libraries(console_shared PRIVATE lm)
 
 	endif()
 	if(${BUILD_STATIC})
